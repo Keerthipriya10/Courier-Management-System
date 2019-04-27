@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 600px;}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding:20px 20px 30px 30px;
+      background-color: #ffff00;
+      color: #000000;
+      font-family: Impact, Charcoal, sans-serif,monospace;
+      height: 100%;
+      font-weight: italic;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #000000;
+      color: white;
+      padding: 15px;
+      margin-bottom:0px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="color:#00ff00;font-family: Arial, Helvetica, sans-serif; font-weight: 900;">FAST COURIER</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="codete.html">VIEW COURIER DETAILS</a></p>
+      <p><a href="upco.html">UPDATE COURIER DETAILS</a></p>
+      <p><a href="delco.html">DELETE DELIVERED COURIERS</a></p>
+    </div>
+    <div class="col-sm-8 text-center"> 
+        <h2 style="color:blue;text-decoration: underline;">Update Courier Details</h2>
+<div class="container well well-lg text-left" style="margin: 50px 400px 150px 100px;width:500px;">
+  <form action="" width="50%">
+    <div class="form-group">
+      <label for="staff_id">CONSIGNMENT NO:</label>
+      <input type="text" class="form-control" id="staff_id" placeholder="Enter Consignment No" name="staff_id">
+    </div>
+        <div class="form-group">
+      <label for="st_name">CURRENT LOCATION:</label>
+      <input type="text" class="form-control" id="st_name" placeholder="Enter Current Location" name="st_name">
+    </div>
+            <div class="form-group">
+      <label for="stpno">Time Left:</label>
+      <input type="text" class="form-control" id="stpno" placeholder="Enter Time Left" name="stpno">
+    </div>
+        <div class="form-group">
+      <label for="stpno">DELIVERY DATE:</label>
+      <input type="text" class="form-control" id="stpno" placeholder="Enter Delivery Date" name="stpno">
+    </div>
+ <div class="form-group">
+      <label for="st_city">STATUS</label>
+      <select class="form-control" id="st_city">
+        <option>AWAITING PICKUP</option>
+        <option>SHIPPED</option>
+        <option>REACHED OFFICE</option>
+        <option>ON THE WAY</option>
+        <option>DELIVERED</option>
+        <option>CANCELLED</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" formaction="">UPDATE</button>
+  </form>
+</div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center" style="margin-bottom: 0px;">
+  <p>@fast courier</p>
+</footer>
+
+</body>
+</html>
