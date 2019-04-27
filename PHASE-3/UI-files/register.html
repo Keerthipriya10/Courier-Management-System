@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CUSTOMER</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style >
+    .navbar {
+      margin: 0px;
+      border-radius: 0;
+      background-color: #4d4d4d
+    }
+     .jumbotron {
+      margin-bottom: 0;
+      background-color: black;
+      padding: 0;
+
+    }
+    footer {
+      background-color: black;
+      padding: 25px;
+      color: white;
+    }
+
+#home {
+color: white ; 
+font-size:36px;
+font-family:"Comic Sans MS", cursive, sans-serif;
+margin: 5px 5px;
+}
+
+  </style>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#cid').blur(function(){
+        var username=$('#cid').val();
+        $.ajax({
+          url:'check.php',
+          method:"post",
+          data:{cid:username},
+          datatype:"text",
+          success:function(data){
+              $('#avail').html(data);
+          }
+        })
+
+      });
+
+
+    });
+
+  </script>
+</head>
+<body>
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1 id="home"><img src="logo.jpg" width="200" height="80">FAST COURIER</h1>      
+  </div>
+</div>
+
+<br>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="home.html">Home</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="emp.php">Employee</a></li>
+        <li class="active"><a href="cust.php">Customer</a></li>
+        <li><a href="hub.html">Hubs</a></li>
+        <li><a href="cont.html">Contact</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="track.php">Track</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container well well-lg" style="margin: 50px 400px 150px 100px; width:600px;">
+  <form method="post" action="register.php" width="50%">
+    <div class="form-group">
+      <label for="cid">CUSTOMER-ID:</label>
+      <input type="text" class="form-control" id="cid" placeholder="Enter User Id" name="cid" required>
+      <div id="avail"></div>
+    </div>
+    <div class="form-group">
+      <label for="cname">CUSTOMER-NAME:</label>
+      <input type="text" class="form-control" id="cname" placeholder="Enter Customer Name" name="cname"required>
+    </div>
+        <div class="form-group">
+      <label for="apwd">CUSTOMER-PHONE NO:</label>
+      <input type="text" class="form-control" id="cpno" placeholder="Enter Customer Phone" name="cpno"required>
+    </div>
+            <div class="form-group">
+      <label for="cmail">CUSTOMER-EMAIL:</label>
+      <input type="email" class="form-control" id="cmail" placeholder="Enter Customer Email-Id" name="cmail"required>
+    </div>
+        <div class="form-group">
+      <label for="cpwd">PASSWORD:</label>
+      <input type="password" class="form-control" id="cpwd" placeholder="Enter password" name="cpwd"required>
+    </div>
+    <div class="form-group">
+      <label for="cpwd">CONFIRM PASSWORD:</label>
+      <input type="password" class="form-control" id="password2" placeholder="Enter password" name="password2">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button type="submit"name="register_btn" class="btn btn-success">REGISTER</button>
+  </form>
+</div>
+
+
+
+
+<footer class="container-fluid text-center">
+<p>@fast courier services</p>
+</footer>
+</body>
+
+</html>
